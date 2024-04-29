@@ -33,10 +33,10 @@ export default function What_We_Do() {
       <Grid
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(4, 1fr)"
-        gap={4}
-        p={4}
-        ml={"40"}
-        w={"2120px"}
+        gap={8}
+        p={2}
+        ml={"180"}
+        w={"2100px"}
         h={602}
       >
         {/* Top Row */}
@@ -68,7 +68,7 @@ export default function What_We_Do() {
             h={"44px"}
             ml={5}
             borderRadius={10}
-            mb={5}
+            mb={6}
           >
             <Icon as={CheckIcon} mx={3.5} mt={4} />
           </Box>
@@ -100,7 +100,7 @@ export default function What_We_Do() {
             that elevate your brand and engage your audience.
           </Text>
         </GridItem>
-        <GridItem rowSpan={2} colSpan={1} bg="white" borderRadius={15}>
+        <GridItem rowSpan={2} colSpan={1} bg="white" borderRadius={15} mr={20}>
           <Box
             bgColor={"gray.100"}
             mt={4}
@@ -112,13 +112,22 @@ export default function What_We_Do() {
           >
             <Icon as={InfoOutlineIcon} mx={3.5} mt={4} />
           </Box>
-          <Heading as="h2" fontSize={25} ml={10}>
+          <Heading as="h2" fontSize={25} ml={20}>
             E-commerce Solutions
           </Heading>
-          <Text maxW={300} ml={10} mt={3}>
+          <Text maxW={300} ml={20} mt={3}>
             From concept to launch, we create stunning, user-centric websites
             that elevate your brand and engage your audience.
           </Text>
+          <Box>
+            <Image
+              blockSize={"320px"}
+              ml={20}
+              mt={4}
+              mb={2}
+              src="../Rectangle 44.png"
+            />
+          </Box>
         </GridItem>
 
         {/* Bottom Row */}
@@ -137,15 +146,15 @@ export default function What_We_Do() {
           <Heading as="h2" fontSize={25} ml={10}>
             Webflow
           </Heading>
-          <HStack>
+          <Box>
             <Text maxW={300} ml={10} mt={3}>
               From concept to launch, we create stunning, user-centric websites
               that elevate your brand and engage your audience.
             </Text>
-            <Box ml={"40%"}>
+            <Box ml={"70%"} mr={0} mt={"-17%"}>
               <Image w={218} h={214} src="../Rectangle 43.png" />
             </Box>
-          </HStack>
+          </Box>
         </GridItem>
         <GridItem colSpan={1} bg="white" borderRadius={20}>
           <Box
