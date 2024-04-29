@@ -22,7 +22,6 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { AiFillDollarCircle } from "react-icons/ai";
 
 export default function What_We_Do() {
   return (
