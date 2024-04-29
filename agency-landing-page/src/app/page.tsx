@@ -21,9 +21,17 @@ export default function Home() {
     <>
       {" "}
       <ChakraProvider>
-        <Box bg="blue.100" h={"100%vh"} width="100vw">
+        <Box bg="blue.50" h={"100%vh"} width="100vw">
           <NavigationBar />
           <Box maxW="35rem" ml={"37%"}>
+            <Box position={"absolute"} zIndex={0}>
+              <Image
+                src="../Mask group.svg"
+                alt={""}
+                width={640.69}
+                height={1004.23}
+              />
+            </Box>
             <Heading
               fontFamily={"fantasy"}
               mb={4}
@@ -32,6 +40,8 @@ export default function Home() {
               textAlign={"center"}
               fontWeight={"100"}
               fontSize={73.34}
+              zIndex={1}
+              position={"relative"}
             >
               Awesome UI Dark Template for Webflow Agency
             </Heading>
