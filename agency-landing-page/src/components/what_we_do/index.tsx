@@ -1,12 +1,28 @@
+"use client";
 import {
+  CheckIcon,
+  HamburgerIcon,
+  InfoOutlineIcon,
+  PhoneIcon,
+  StarIcon,
+  SunIcon,
+} from "@chakra-ui/icons";
+import {
+  AlertIcon,
   Box,
   ChakraProvider,
   Grid,
   GridItem,
   Heading,
+  Icon,
+  StepIcon,
+  TagRightIcon,
   Text,
+  Image,
+  HStack,
 } from "@chakra-ui/react";
 import React from "react";
+import { AiFillDollarCircle } from "react-icons/ai";
 
 export default function What_We_Do() {
   return (
@@ -25,36 +41,132 @@ export default function What_We_Do() {
       >
         {/* Top Row */}
         <GridItem colSpan={1} bg="white" borderRadius={15}>
-          <Box p={4}>
-            <Text>Item 1</Text>
+          <Box
+            bgColor={"gray.100"}
+            mt={4}
+            w={"44px"}
+            h={"44px"}
+            ml={5}
+            borderRadius={10}
+            mb={5}
+          >
+            <Icon as={StarIcon} mx={3.5} mt={4} />
           </Box>
+          <Heading as="h2" fontSize={25} ml={10}>
+            UI/UX Design
+          </Heading>
+          <Text maxW={300} ml={10} mt={3}>
+            From concept to launch, we create stunning, user-centric websites
+            that elevate your brand and engage your audience.
+          </Text>
         </GridItem>
         <GridItem colSpan={1} bg="white" borderRadius={15}>
-          <Box p={4}>
-            <Text>Item 2</Text>
+          <Box
+            bgColor={"gray.100"}
+            mt={4}
+            w={"44px"}
+            h={"44px"}
+            ml={5}
+            borderRadius={10}
+            mb={5}
+          >
+            <Icon as={CheckIcon} mx={3.5} mt={4} />
           </Box>
+          <Heading as="h2" fontSize={25} ml={10}>
+            Web Design
+          </Heading>
+          <Text maxW={300} ml={10} mt={3}>
+            From concept to launch, we create stunning, user-centric websites
+            that elevate your brand and engage your audience.
+          </Text>
         </GridItem>
         <GridItem colSpan={1} bg="white" borderRadius={15}>
-          <Box p={4}>
-            <Text>Item 3</Text>
+          <Box
+            bgColor={"gray.100"}
+            mt={4}
+            w={"44px"}
+            h={"44px"}
+            ml={5}
+            borderRadius={10}
+            mb={5}
+          >
+            <Icon as={HamburgerIcon} mx={3.5} mt={4} />
           </Box>
+          <Heading as="h2" fontSize={25} ml={10}>
+            Responsive Web
+          </Heading>
+          <Text maxW={300} ml={10} mt={3}>
+            From concept to launch, we create stunning, user-centric websites
+            that elevate your brand and engage your audience.
+          </Text>
         </GridItem>
         <GridItem rowSpan={2} colSpan={1} bg="white" borderRadius={15}>
-          <Box p={4}>
-            <Text>Item 4 (spans 2 rows)</Text>
+          <Box
+            bgColor={"gray.100"}
+            mt={4}
+            w={"44px"}
+            h={"44px"}
+            ml={5}
+            borderRadius={10}
+            mb={5}
+          >
+            <Icon as={InfoOutlineIcon} mx={3.5} mt={4} />
           </Box>
+          <Heading as="h2" fontSize={25} ml={10}>
+            E-commerce Solutions
+          </Heading>
+          <Text maxW={300} ml={10} mt={3}>
+            From concept to launch, we create stunning, user-centric websites
+            that elevate your brand and engage your audience.
+          </Text>
         </GridItem>
 
         {/* Bottom Row */}
         <GridItem colSpan={2} bg="white" borderRadius={20}>
-          <Box p={4}>
-            <Text>Item 5 (spans 2 cols)</Text>
+          <Box
+            bgColor={"gray.100"}
+            mt={4}
+            w={"44px"}
+            h={"44px"}
+            ml={5}
+            borderRadius={10}
+            mb={5}
+          >
+            <Image src="../Group 27170.png" />
           </Box>
+          <Heading as="h2" fontSize={25} ml={10}>
+            Webflow
+          </Heading>
+          <HStack>
+            <Text maxW={300} ml={10} mt={3}>
+              From concept to launch, we create stunning, user-centric websites
+              that elevate your brand and engage your audience.
+            </Text>
+            <Box ml={"40%"}>
+              <Image w={218} h={214} src="../Rectangle 43.png" />
+            </Box>
+          </HStack>
         </GridItem>
         <GridItem colSpan={1} bg="white" borderRadius={20}>
-          <Box p={4}>
-            <Text>Item 6</Text>
+          <Box
+            bgColor={"gray.100"}
+            mt={4}
+            w={"44px"}
+            h={"44px"}
+            ml={5}
+            borderRadius={10}
+            mb={5}
+          >
+            <Icon as={PhoneIcon} mx={3.5} mt={4} />
           </Box>
+          <Heading as="h2" fontSize={25} ml={10}>
+            Custom Development
+          </Heading>
+          <Text maxW={300} ml={10} mt={3}>
+            From concept to launch, we create stunning, user-centric websites
+            that elevate your brand and engage your audience.
+          </Text>
+          <Box></Box>
         </GridItem>
       </Grid>
     </ChakraProvider>
