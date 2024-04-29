@@ -15,18 +15,19 @@ import {
 // 1. import `ChakraProvider` component
 import { ChakraProvider } from "@chakra-ui/react";
 import NavigationBar from "@/components/navigationBar";
+import What_We_Do from "@/components/what_we_do";
 export default function Home() {
   return (
     <>
       {" "}
       <ChakraProvider>
-        <Box bg="blue.100" height="100vh" width="100vw">
+        <Box bg="blue.100" h={"100%vh"} width="100vw">
           <NavigationBar />
           <Box maxW="35rem" ml={"37%"}>
             <Heading
               fontFamily={"fantasy"}
               mb={4}
-              mt={"30%"}
+              mt={"20"}
               ml={"10%"}
               textAlign={"center"}
               fontWeight={"100"}
@@ -42,10 +43,12 @@ export default function Home() {
               mt={4}
               w={"211px"}
               h={"60px"}
+              mb={10}
             >
               Get in Touch
             </Button>
           </Box>
+          <What_We_Do />
         </Box>{" "}
       </ChakraProvider>
     </>
