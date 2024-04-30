@@ -16,12 +16,13 @@ import {
 import { ChakraProvider } from "@chakra-ui/react";
 import NavigationBar from "@/components/navigationBar";
 import What_We_Do from "@/components/what_we_do";
+import Lets_Get_InTouch from "@/components/Lets_get_intouch";
 export default function Home() {
   return (
     <>
       {" "}
       <ChakraProvider>
-        <Box bg="blue.100" h={"100%vh"} width="100vw">
+        <Box bg="blue.100" width="100vw">
           <NavigationBar />
           <Box maxW="35rem" ml={"37%"}>
             <Heading
@@ -48,7 +49,12 @@ export default function Home() {
               Get in Touch
             </Button>
           </Box>
-          <What_We_Do />
+          <Box>
+            <What_We_Do />
+          </Box>
+          <Box>
+            <Lets_Get_InTouch />
+          </Box>
         </Box>{" "}
       </ChakraProvider>
     </>
