@@ -142,7 +142,7 @@ export default function What_We_Do() {
             </Center>
           </GridItem>
           <GridItem colSpan={2} bg="white" borderRadius="20" p={2}>
-            <Flex align="start" justify="space-between">
+            <Flex justify="space-between">
               {/* Text Content Box */}
 
               <Box pr={5}>
@@ -168,15 +168,17 @@ export default function What_We_Do() {
               </Box>
 
               {/* Image Box */}
-              <Box flexShrink={0}>
-                {" "}
-                {/* Prevent the image from shrinking */}
-                <Image
-                  width={218}
-                  height={214}
-                  src="../Rectangle 43.png"
-                  alt="Webflow Image"
-                />
+              <Box
+                flexShrink={0}
+                width={218}
+                height={214}
+                bg={"blue.600"}
+                borderRadius={25}
+                mt={3}
+              >
+                <Center>
+                  <SunIcon color={"white"} blockSize={"200px"} w={"100px"} />
+                </Center>
               </Box>
             </Flex>
           </GridItem>
