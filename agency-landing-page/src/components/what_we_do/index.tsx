@@ -161,7 +161,7 @@ export default function What_We_Do() {
                 <Heading as="h2" fontSize="25" mb={3}>
                   Webflow
                 </Heading>
-                <Text maxWidth="300px">
+                <Text maxWidth="300px" mb={4}>
                   From concept to launch, we create stunning, user-centric
                   websites that elevate your brand and engage your audience.
                 </Text>
@@ -198,7 +198,7 @@ export default function What_We_Do() {
             <Heading as="h2" fontSize={25} ml={10}>
               Custom Development
             </Heading>
-            <Text maxW={300} ml={10} mt={3}>
+            <Text maxW={300} ml={10} mt={3} mb={4}>
               From concept to launch, we create stunning, user-centric websites
               that elevate your brand and engage your audience.
             </Text>
