@@ -48,7 +48,7 @@ export default function Check_our_work() {
             mb={3}
             ml={3}
             w="90vw" // Width of 50% of the viewport width
-            h={"35vh"}
+            h={"20vh"}
           >
             <IconButton
               icon={<ChevronLeftIcon />}
@@ -89,12 +89,12 @@ export default function Check_our_work() {
             onSlideChange={(swiper) => {
               // Reset styles for all slides
               swiper.slides.forEach((slide) => {
-                slide.style.transform = "scale(0.9)";
+                slide.style.transform = "scale(0.7)";
                 slide.style.zIndex = "0"; // Lower z-index for non-active slides
               });
               // Enhance the active slide
               const activeSlide = swiper.slides[swiper.activeIndex];
-              activeSlide.style.transform = "scale(1.2)";
+              activeSlide.style.transform = "scale(1)";
               activeSlide.style.zIndex = "1"; // Higher z-index for the active slide
             }}
             onInit={(swiper) => {
