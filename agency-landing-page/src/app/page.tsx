@@ -28,11 +28,12 @@ export default function Home() {
           <NavigationBar />
 
           <Flex
-            mt={"auto"}
+            mt={"2"}
             direction="column"
             align="center"
             justify="center"
-            height="100vh" // This makes the Flex container fill the viewport height
+            h={"60vh"}
+            // This makes the Flex container fill the viewport height
           >
             <Box alignContent={"center"}>
               <Heading
@@ -41,7 +42,7 @@ export default function Home() {
                 textAlign={"center"}
                 fontWeight={"100"}
                 maxW={"450"}
-                w={"200"}
+                w={"200vw"}
                 fontSize={73}
               >
                 Awesome UI Dark Template for Webflow Agency
