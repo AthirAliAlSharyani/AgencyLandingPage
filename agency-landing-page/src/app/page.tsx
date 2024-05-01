@@ -22,22 +22,21 @@ import Lets_Get_InTouch from "@/components/Lets_get_intouch";
 export default function Home() {
   return (
     <>
-      
       <ChakraProvider>
         <Box bg="blue.100" width="100vw">
           <NavigationBar />
 
           <Flex
+            mt={"auto"}
             direction="column"
             align="center"
             justify="center"
             height="100vh" // This makes the Flex container fill the viewport height
           >
-            <Box maxW="35rem" alignContent={"center"} mt={"-60"}>
+            <Box alignContent={"center"}>
               <Heading
                 fontFamily={"fantasy"}
                 mb={4}
-                mt={"30%"}
                 textAlign={"center"}
                 fontWeight={"100"}
                 maxW={"450"}
@@ -60,41 +59,14 @@ export default function Home() {
               </Center>
             </Box>
           </Flex>
-        </Box>
 
-          <Box maxW="35rem" ml={"37%"}>
-            <Heading
-              fontFamily={"fantasy"}
-              mb={4}
-              mt={"20"}
-              ml={"10%"}
-              textAlign={"center"}
-              fontWeight={"100"}
-              fontSize={73.34}
-            >
-              Awesome UI Dark Template for Webflow Agency
-            </Heading>
-            <Button
-              bg={"black"}
-              color={"white"}
-              _hover={{ bg: "white", color: "black" }}
-              ml={"36%"}
-              mt={4}
-              w={"211px"}
-              h={"60px"}
-              mb={10}
-            >
-              Get in Touch
-            </Button>
-          </Box>
-          <Box>
+          <Box mt={"auto"}>
             <What_We_Do />
           </Box>
           <Box>
             <Lets_Get_InTouch />
           </Box>
         </Box>
-
       </ChakraProvider>
     </>
   );

@@ -33,6 +33,7 @@ export default function What_We_Do() {
       alignContent={"center"}
       p={90}
       w="full"
+      mt={"auto"}
     >
       <Heading as="h2" size="xl" noOfLines={1} ml={[2, 4, 7]}>
         What We Do?
@@ -43,7 +44,7 @@ export default function What_We_Do() {
           templateColumns={["repeat(4, 1fr)"]}
           gap={4}
           p={2}
-          mt={5}
+          mt={"auto"}
           w="full"
         >
           {/* Top Row */}

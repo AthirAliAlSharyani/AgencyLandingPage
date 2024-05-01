@@ -69,32 +69,40 @@ export default function Lets_Get_InTouch() {
           bg="white"
           borderRadius="lg"
           mb={2}
-          w={["200px", "900px", "800"]}
+          // w={["200px", "900px", "800"]}
           px={10}
           py={10}
           textAlign="center"
           zIndex="1"
+          w={["400px", "900px", "800"]}
+          maxW="auto"
         >
           <Heading mb={4} fontSize={["md", "lg", "xl"]} mr={"70%"}>
             Agency landing page
           </Heading>
           <HStack>
             <Text
-              fontSize={15}
+              fontSize={["sm", "md", "lg"]}
               mx={[2, 1, 8]}
               textAlign="left"
               color={"gray.400"}
-              mr={"60"}
+              mr={"auto"}
               noOfLines={3}
               w={350}
             >
               Ready to elevate your online presence? Contact us today to discuss
               your project and discover how we can bring your vision to life.
             </Text>
-            <HStack fontSize={10} color={"gray.400"} gap={6} mb={20} ml={"15%"}>
+            <HStack
+              fontSize={["xs", "md", "md"]}
+              color={"gray.400"}
+              gap={6}
+              mb={20}
+              ml={"15%"}
+            >
               <Text> Home</Text>
               <Text> About</Text>
-              <Text noOfLines={1} w={20}>
+              <Text noOfLines={1} w={"20"}>
                 How it Works
               </Text>
               <Text> Services</Text>
@@ -103,7 +111,7 @@ export default function Lets_Get_InTouch() {
           <HStack justifyContent={"space-between"} mt={5}>
             <HStack ml={"7"}>
               <ChatIcon />
-              <Text color={"gray.400"} fontSize={15}>
+              <Text color={"gray.400"} fontSize={["xs", "sm", "md"]}>
                 {" "}
                 Made with love
               </Text>
