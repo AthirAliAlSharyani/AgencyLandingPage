@@ -19,6 +19,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import NavigationBar from "@/components/navigationBar";
 import What_We_Do from "@/components/what_we_do";
 import Lets_Get_InTouch from "@/components/Lets_get_intouch";
+import Check_our_work from "@/components/check_our_work";
 export default function Home() {
   return (
     <>
@@ -61,9 +62,8 @@ export default function Home() {
             </Box>
           </Flex>
 
-          <Box mt={"auto"}>
-            <What_We_Do />
-          </Box>
+          <What_We_Do />
+          <Check_our_work />
           <Box>
             <Lets_Get_InTouch />
           </Box>
