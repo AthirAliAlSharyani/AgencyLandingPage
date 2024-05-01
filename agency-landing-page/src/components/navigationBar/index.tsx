@@ -106,7 +106,7 @@ export default function NavigationBar() {
           </>
         ) : (
           // Hamburger Menu for mobile
-          <Box ml="auto">
+          <Box>
             <Menu>
               <MenuButton
                 as={IconButton}
