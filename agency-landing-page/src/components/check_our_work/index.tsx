@@ -48,7 +48,7 @@ export default function Check_our_work() {
             mb={3}
             ml={3}
             w="90vw" // Width of 50% of the viewport width
-            h={"20vh"}
+            h={"35vh"}
           >
             <IconButton
               icon={<ChevronLeftIcon />}
@@ -72,7 +72,7 @@ export default function Check_our_work() {
         <div
           style={{
             width: "100%",
-            height: "100vh",
+            height: "80vh",
             overflow: "hidden",
             position: "relative",
           }}
