@@ -22,7 +22,7 @@ import Lets_Get_InTouch from "@/components/Lets_get_intouch";
 export default function Home() {
   return (
     <>
-      {" "}
+      
       <ChakraProvider>
         <Box bg="blue.100" width="100vw">
           <NavigationBar />
@@ -93,7 +93,7 @@ export default function Home() {
           <Box>
             <Lets_Get_InTouch />
           </Box>
-        </Box>{" "}
+        </Box>
 
       </ChakraProvider>
     </>
