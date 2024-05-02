@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 import * as React from "react";
@@ -11,55 +12,71 @@ import {
   Box,
   border,
   Button,
+  Center,
+  Flex,
+  Divider,
 } from "@chakra-ui/react";
 // 1. import `ChakraProvider` component
 import { ChakraProvider } from "@chakra-ui/react";
 import NavigationBar from "@/components/navigationBar";
 import What_We_Do from "@/components/what_we_do";
+import Lets_Get_InTouch from "@/components/Lets_get_intouch";
+import Check_our_work from "@/components/check_our_work";
+import Reviews from "@/components/reviews_Sextion";
+import Pricing_Section from "@/components/Pricing_Section";
+import FQA from "@/components/FAQ";
 export default function Home() {
   return (
     <>
-      {" "}
       <ChakraProvider>
         <Box bg="blue.50" h={"100%vh"} width="100vw">
           <NavigationBar />
-          <Box maxW="35rem" ml={"37%"}>
-            <Box position={"absolute"} zIndex={0}>
-              <Image
-                src="../Mask group.svg"
-                alt={""}
-                width={640.69}
-                height={1004.23}
-              />
+
+          <Flex
+            mt={"2"}
+            direction="column"
+            align="center"
+            justify="center"
+            h={"60vh"}
+            // This makes the Flex container fill the viewport height
+          >
+            <Box alignContent={"center"}>
+              <Heading
+                fontFamily={"fantasy"}
+                mb={4}
+                textAlign={"center"}
+                fontWeight={"100"}
+                maxW={"450"}
+                w={"200vw"}
+                fontSize={73}
+              >
+                Awesome UI Dark Template for Webflow Agency
+              </Heading>
+              <Center>
+                <Button
+                  bg={"black"}
+                  color={"white"}
+                  _hover={{ bg: "white", color: "black" }}
+                  mt={4}
+                  w={"211px"}
+                  h={"60px"}
+                >
+                  Get in Touch
+                </Button>
+              </Center>
             </Box>
-            <Heading
-              fontFamily={"fantasy"}
-              mb={4}
-              mt={"20"}
-              ml={"10%"}
-              textAlign={"center"}
-              fontWeight={"100"}
-              fontSize={73.34}
-              zIndex={1}
-              position={"relative"}
-            >
-              Awesome UI Dark Template for Webflow Agency
-            </Heading>
-            <Button
-              bg={"black"}
-              color={"white"}
-              _hover={{ bg: "white", color: "black" }}
-              ml={"36%"}
-              mt={4}
-              w={"211px"}
-              h={"60px"}
-              mb={10}
-            >
-              Get in Touch
-            </Button>
-          </Box>
+          </Flex>
+
           <What_We_Do />
-        </Box>{" "}
+          <Check_our_work />
+          <Reviews />
+          <Pricing_Section />
+          <FQA />
+          <Divider mt={20} mb={20} borderColor="grey" borderWidth={"0.5"} />
+          <Box>
+            <Lets_Get_InTouch />
+          </Box>
+        </Box>
       </ChakraProvider>
     </>
   );
