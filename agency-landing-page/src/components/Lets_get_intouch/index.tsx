@@ -23,7 +23,6 @@ export default function Lets_Get_InTouch() {
         w="full"
         overflow="hidden"
         zIndex={1}
-        position="relative" // Relative positioning for the container
       >
         {/* Foreground Content */}
         <Box

@@ -29,7 +29,11 @@ export default function Home() {
   return (
     <>
       <ChakraProvider>
-        <Box bg="blue.50" h={"100%vh"} width="100vw">
+        <Box
+          bg="blue.50"
+          width="100vw"
+          position="relative" // Relative positioning for the container
+        >
           <NavigationBar />
 
           <Flex
@@ -40,7 +44,15 @@ export default function Home() {
             h={"60vh"}
             // This makes the Flex container fill the viewport height
           >
-            <Box alignContent={"center"}>
+            <Box>
+              <Box position={"absolute"} zIndex={0}>
+                <Image
+                  src="../Mask group.svg"
+                  alt=""
+                  width={"900"}
+                  height={"900"}
+                />
+              </Box>
               <Heading
                 fontFamily={"fantasy"}
                 mb={4}
@@ -49,6 +61,8 @@ export default function Home() {
                 maxW={"450"}
                 w={"200vw"}
                 fontSize={73}
+                position={"relative"}
+                zIndex={1}
               >
                 Awesome UI Dark Template for Webflow Agency
               </Heading>
@@ -74,6 +88,15 @@ export default function Home() {
           <FQA />
           <Divider mt={20} mb={20} borderColor="grey" borderWidth={"0.5"} />
           <Box>
+            <Box position="absolute" zIndex={-1} w="full" bottom={0}>
+              <Image
+                src="../Group 27169.svg"
+                alt="Decorative background"
+                width="3004"
+                height="128"
+              />
+            </Box>
+
             <Lets_Get_InTouch />
           </Box>
         </Box>
