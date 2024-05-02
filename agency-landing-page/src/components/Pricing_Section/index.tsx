@@ -106,7 +106,7 @@ export default function Pricing_Section() {
               h={"90"}
               ml={3}
               mr={3}
-              mt={16}
+              mt={10}
               mb={3}
               justifyContent={"space-between"}
             >
