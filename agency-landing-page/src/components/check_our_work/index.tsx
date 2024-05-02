@@ -16,7 +16,7 @@ import {
   Icon,
   IconButton,
 } from "@chakra-ui/react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import swiper from "swiper";
 import { Navigation } from "swiper/modules";
 
@@ -56,7 +56,6 @@ export default function Check_our_work() {
               borderRadius="full"
               boxSize="70px" // Box size as 60px
               aria-label="Previous slide"
-              _active={{`${swiperRef.current}` == 0 ? 'false' : 'true'}}
             />
             <Heading mx="4" fontSize={60}>
               Check Our Work
