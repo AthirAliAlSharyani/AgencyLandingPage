@@ -22,6 +22,7 @@ import What_We_Do from "@/components/what_we_do";
 import Lets_Get_InTouch from "@/components/Lets_get_intouch";
 import Check_our_work from "@/components/check_our_work";
 import Reviews from "@/components/reviews_Sextion";
+import Pricing_Section from "@/components/Pricing_Section";
 export default function Home() {
   return (
     <>
@@ -67,6 +68,7 @@ export default function Home() {
           <What_We_Do />
           <Check_our_work />
           <Reviews />
+          <Pricing_Section />
           <Box>
             <Lets_Get_InTouch />
           </Box>
