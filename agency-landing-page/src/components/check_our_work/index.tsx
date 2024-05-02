@@ -56,7 +56,6 @@ export default function Check_our_work() {
               borderRadius="full"
               boxSize="70px" // Box size as 60px
               aria-label="Previous slide"
-              _active={{`${swiperRef.current}` == 0 ? 'false' : 'true'}}
             />
             <Heading mx="4" fontSize={60}>
               Check Our Work
