@@ -16,7 +16,7 @@ import {
   Icon,
   IconButton,
 } from "@chakra-ui/react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import swiper from "swiper";
 import { Navigation } from "swiper/modules";
 
