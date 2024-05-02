@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <ChakraProvider>
-        <Box bg="blue.100" width="100vw">
+        <Box bg="blue.50" width="100vw">
           <NavigationBar />
 
           <Flex
