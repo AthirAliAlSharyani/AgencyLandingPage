@@ -14,6 +14,7 @@ import {
   Button,
   Center,
   Flex,
+  Divider,
 } from "@chakra-ui/react";
 // 1. import `ChakraProvider` component
 import { ChakraProvider } from "@chakra-ui/react";
@@ -23,6 +24,7 @@ import Lets_Get_InTouch from "@/components/Lets_get_intouch";
 import Check_our_work from "@/components/check_our_work";
 import Reviews from "@/components/reviews_Sextion";
 import Pricing_Section from "@/components/Pricing_Section";
+import FQA from "@/components/FAQ";
 export default function Home() {
   return (
     <>
@@ -69,6 +71,8 @@ export default function Home() {
           <Check_our_work />
           <Reviews />
           <Pricing_Section />
+          <FQA />
+          <Divider mt={20} mb={20} borderColor="grey" borderWidth={"0.5"} />
           <Box>
             <Lets_Get_InTouch />
           </Box>
