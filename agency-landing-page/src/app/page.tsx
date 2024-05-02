@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 import * as React from "react";
@@ -20,6 +21,7 @@ import NavigationBar from "@/components/navigationBar";
 import What_We_Do from "@/components/what_we_do";
 import Lets_Get_InTouch from "@/components/Lets_get_intouch";
 import Check_our_work from "@/components/check_our_work";
+import Reviews from "@/components/reviews_Sextion";
 export default function Home() {
   return (
     <>
@@ -64,6 +66,7 @@ export default function Home() {
 
           <What_We_Do />
           <Check_our_work />
+          <Reviews />
           <Box>
             <Lets_Get_InTouch />
           </Box>
