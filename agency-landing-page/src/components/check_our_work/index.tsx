@@ -56,6 +56,7 @@ export default function Check_our_work() {
               borderRadius="full"
               boxSize="70px" // Box size as 60px
               aria-label="Previous slide"
+              _active={{`${swiperRef.current}` == 0 ? 'false' : 'true'}}
             />
             <Heading mx="4" fontSize={60}>
               Check Our Work
@@ -78,6 +79,7 @@ export default function Check_our_work() {
           }}
         >
           <Swiper
+            initialSlide={1}
             slidesPerView={2} // Shows 1 centered and 2 halves
             spaceBetween={120} // Space between slides
             centeredSlides={true} // Ensures the active slide is centered
