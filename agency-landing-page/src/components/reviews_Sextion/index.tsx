@@ -25,6 +25,7 @@ export default function Reviews() {
         w={["900", "30%", "438px"]} // Adjust width for responsiveness
         bg="white"
         h={["300px", "90%", "20%"]}
+        mt={"10"}
       >
         {isMobile ? (
           <>
@@ -64,13 +65,12 @@ export default function Reviews() {
                 mt={-8}
               />
             </Stack>
-            <Center mt={4}>
+            <Box mt={4} w={20} mx={"25%"}>
               <Text color="gray.600">
                 <b color="black.900">5.0</b> Based on <b>205</b> reviews
               </Text>
-            </Center>
-            <Box mt={2} ml={"20"} textAlign="center">
-              <Box display="flex" alignItems="center" justifyContent="center">
+
+              <Box ml={-2}>
                 <Icon as={StarIcon} color="yellow.400" />
                 <Icon as={StarIcon} color="yellow.400" />
                 <Icon as={StarIcon} color="yellow.400" />
