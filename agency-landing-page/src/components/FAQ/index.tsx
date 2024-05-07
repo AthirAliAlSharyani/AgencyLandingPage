@@ -10,6 +10,7 @@ import {
   Collapse,
   useDisclosure,
   ChakraProvider,
+  Flex,
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
@@ -43,7 +44,14 @@ function FAQ() {
   ];
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <ChakraProvider>
+    <Flex
+      direction="column"
+      align="left"
+      alignContent={"center"}
+      p={90}
+      w="full"
+      mt={"auto"}
+    >
       <HStack
         align="start"
         spacing={10} // More manageable spacing
@@ -54,7 +62,11 @@ function FAQ() {
         mx="auto"
       >
         <VStack align="stretch" spacing={4} w="30%">
-          <Heading fontSize={"67"} w={"380px"} mt={"120"}>
+          <Heading
+            fontSize={["20", "25", "40", "67"]}
+            w={["200", "290", "300", "380px"]}
+            mt={"120"}
+          >
             Frequently Asked Questions
           </Heading>
         </VStack>
@@ -64,7 +76,7 @@ function FAQ() {
           ))}
         </VStack>
       </HStack>
-    </ChakraProvider>
+    </Flex>
   );
 }
 export default FAQ;
@@ -79,8 +91,6 @@ function FAQItem({ question, answer }: FAQItemProps) {
 
   return (
     <Box mb={4}>
-      {" "}
-      {/* Add margin bottom for spacing between questions */}
       <Box p={5} boxShadow="md" borderRadius="md" width="100%" bg="white">
         <HStack justifyContent="space-between" width="100%">
           <Text
