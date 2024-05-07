@@ -29,10 +29,11 @@ export default function Home() {
   return (
     <>
       <ChakraProvider>
-        <Box bg="blue.100" width="100vw">
+        <Box bg="blue.50" width="100vw">
           <NavigationBar />
 
           <Flex
+            width={["100%", "100%", "100%", "100%"]}
             mt={"2"}
             direction="column"
             align="center"
@@ -41,17 +42,19 @@ export default function Home() {
             // This makes the Flex container fill the viewport height
           >
             <Box alignContent={"center"}>
-              <Heading
-                fontFamily={"fantasy"}
-                mb={4}
-                textAlign={"center"}
-                fontWeight={"100"}
-                maxW={"450"}
-                w={"200vw"}
-                fontSize={73}
-              >
-                Awesome UI Dark Template for Webflow Agency
-              </Heading>
+              <Center>
+                <Heading
+                  fontFamily={"fantasy"}
+                  mb={4}
+                  textAlign={"center"}
+                  fontWeight={"100"}
+                  maxW={"450"}
+                  w={"200vw"}
+                  fontSize={73}
+                >
+                  Awesome UI Dark Template for Webflow Agency
+                </Heading>
+              </Center>
               <Center>
                 <Button
                   bg={"black"}

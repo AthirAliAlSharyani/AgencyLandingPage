@@ -52,18 +52,18 @@ export default function What_We_Do() {
             <Box
               bgColor={"gray.100"}
               mt={4}
-              w={"44px"}
-              h={"44px"}
+              w={["44px"]}
+              h={["44px"]}
               ml={5}
               borderRadius={10}
               mb={5}
             >
               <Icon as={StarIcon} mx={3.5} mt={4} />
             </Box>
-            <Heading as="h2" fontSize={25} ml={10}>
+            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
               UI/UX Design
             </Heading>
-            <Text maxW={300} ml={10} mt={3}>
+            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
               From concept to launch, we create stunning, user-centric websites
               that elevate your brand and engage your audience.
             </Text>
@@ -80,10 +80,10 @@ export default function What_We_Do() {
             >
               <Icon as={CheckIcon} mx={3.5} mt={4} />
             </Box>
-            <Heading as="h2" fontSize={"25"} ml={10}>
+            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
               Web Design
             </Heading>
-            <Text maxW={300} ml={10} mt={3}>
+            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
               From concept to launch, we create stunning, user-centric websites
               that elevate your brand and engage your audience.
             </Text>
@@ -92,18 +92,18 @@ export default function What_We_Do() {
             <Box
               bgColor={"gray.100"}
               mt={4}
-              w={"44px"}
-              h={"44px"}
+              w={["50px", "44px", "44px", "44px"]}
+              h={["20px", "46px", "44px", "44px"]}
               ml={5}
               borderRadius={10}
               mb={5}
             >
               <Icon as={HamburgerIcon} mx={3.5} mt={4} />
             </Box>
-            <Heading as="h2" fontSize={25} ml={10}>
+            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
               Responsive Web
             </Heading>
-            <Text maxW={300} ml={10} mt={3}>
+            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
               From concept to launch, we create stunning, user-centric websites
               that elevate your brand and engage your audience.
             </Text>
@@ -126,15 +126,10 @@ export default function What_We_Do() {
             >
               <Icon as={InfoOutlineIcon} mx={3.5} mt={4} />
             </Box>
-            <Heading
-              as="h2"
-              fontSize={25}
-              ml={{ sm: "2", md: "2", lg: "20" }}
-              w={{ sm: "60" }}
-            >
+            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
               E-commerce Solutions
             </Heading>
-            <Text maxW={300} ml={20} mt={3}>
+            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
               From concept to launch, we create stunning, user-centric websites
               that elevate your brand and engage your audience.
             </Text>
@@ -159,26 +154,19 @@ export default function What_We_Do() {
                   <Image src="../Group 27170.png" />
                 </Box>{" "}
                 {/* Adding padding to separate from the image */}
-                <Heading as="h2" fontSize="25" mb={3}>
+                <Heading as="h2" fontSize={["10", "15", "25"]} mb={3}>
                   Webflow
                 </Heading>
-                <Text maxWidth="300px" mb={4}>
+                <Text maxWidth="300px" mb={4} fontSize={["10", "10", "20"]}>
                   From concept to launch, we create stunning, user-centric
                   websites that elevate your brand and engage your audience.
                 </Text>
               </Box>
 
               {/* Image Box */}
-              <Box
-                flexShrink={0}
-                width={218}
-                height={214}
-                bg={"blue.600"}
-                borderRadius={25}
-                mt={3}
-              >
+              <Box flexShrink={0} bg={"blue.600"} borderRadius={25} mt={3}>
                 <Center>
-                  <SunIcon color={"white"} blockSize={"200px"} w={"100px"} />
+                  <SunIcon color={"white"} blockSize={"200px"} />
                 </Center>
               </Box>
             </Flex>
@@ -196,10 +184,10 @@ export default function What_We_Do() {
             >
               <Icon as={PhoneIcon} mx={3.5} mt={4} />
             </Box>
-            <Heading as="h2" fontSize={25} ml={10}>
+            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
               Custom Development
             </Heading>
-            <Text maxW={300} ml={10} mt={3} mb={4}>
+            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
               From concept to launch, we create stunning, user-centric websites
               that elevate your brand and engage your audience.
             </Text>
