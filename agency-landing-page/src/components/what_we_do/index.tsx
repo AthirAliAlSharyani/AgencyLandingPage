@@ -1,199 +1,148 @@
 "use client";
+
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
-  CheckIcon,
-  HamburgerIcon,
-  InfoOutlineIcon,
-  PhoneIcon,
-  StarIcon,
-  SunIcon,
-} from "@chakra-ui/icons";
-import {
-  AlertIcon,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
   Box,
-  ChakraProvider,
-  Grid,
   GridItem,
   Heading,
-  Icon,
-  StepIcon,
-  TagRightIcon,
   Text,
   Image,
-  HStack,
   Flex,
+  HStack,
   Center,
+  Grid,
+  Stack,
+  VStack,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function What_We_Do() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const url = "https://fakestoreapi.com/products";
+    const options = {
+      method: "GET",
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((response) => {
+        setData(response);
+      })
+      .catch((err) => {
+        console.error(err, "error");
+      });
+  }, []);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const categories = Array.from(
+    new Set(data.map((product) => product.category))
+  );
+
+  const filteredProducts = data.filter(
+    (product) =>
+      product.category === selectedCategory || selectedCategory === ""
+  );
+
   return (
-    <Flex
-      direction="column"
-      align="left"
-      alignContent={"center"}
-      p={90}
-      w="full"
-      mt={"auto"}
-    >
-      <Heading as="h2" size="xl" noOfLines={1} ml={[2, 4, 7]}>
-        What We Do?
-      </Heading>
-      <Center>
+    <>
+      <Flex
+        direction="column"
+        align="left"
+        alignContent={"center"}
+        p={90}
+        w="full"
+        mt={"auto"}
+      >
+        <HStack justifyContent={"space-between"}>
+          <Heading as="h2" size="xl" noOfLines={1} ml={[2, 4, 7]}>
+            Available Product
+          </Heading>
+
+          <Menu>
+            <MenuButton
+              as={Button}
+              bg={"blue.500"}
+              color={"white"}
+              _hover={{ bg: "white", color: "black" }}
+              mt={4}
+              w={"211px"}
+              h={"60px"}
+              mr={20}
+            >
+              {selectedCategory ? selectedCategory : "Select Category"}
+              <ChevronDownIcon mr={4} ml={3} />
+            </MenuButton>
+            <MenuList>
+              {categories.map((category) => (
+                <MenuItem
+                  key={category}
+                  onClick={() => handleCategorySelect(category)}
+                >
+                  {category}
+                </MenuItem>
+              ))}
+              <MenuItem onClick={() => handleCategorySelect("")}>
+                Show All
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </HStack>
         <Grid
           templateRows="repeat(2, 1fr)"
           templateColumns={["repeat(4, 1fr)"]}
           gap={4}
           p={2}
-          mt={"auto"}
+          mt="10"
           w="full"
         >
-          {/* Top Row */}
-          <GridItem colSpan={1} bg="white" borderRadius={15}>
-            <Box
-              bgColor={"gray.100"}
-              mt={4}
-              w={["44px"]}
-              h={["44px"]}
-              ml={5}
-              borderRadius={10}
-              mb={5}
-            >
-              <Icon as={StarIcon} mx={3.5} mt={4} />
-            </Box>
-            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
-              UI/UX Design
-            </Heading>
-            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </Text>
-          </GridItem>
-          <GridItem colSpan={1} bg="white" borderRadius={15}>
-            <Box
-              bgColor={"gray.100"}
-              mt={4}
-              w={"44px"}
-              h={"44px"}
-              ml={5}
-              borderRadius={10}
-              mb={6}
-            >
-              <Icon as={CheckIcon} mx={3.5} mt={4} />
-            </Box>
-            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
-              Web Design
-            </Heading>
-            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </Text>
-          </GridItem>
-          <GridItem colSpan={1} bg="white" borderRadius={15}>
-            <Box
-              bgColor={"gray.100"}
-              mt={4}
-              w={["50px", "44px", "44px", "44px"]}
-              h={["20px", "46px", "44px", "44px"]}
-              ml={5}
-              borderRadius={10}
-              mb={5}
-            >
-              <Icon as={HamburgerIcon} mx={3.5} mt={4} />
-            </Box>
-            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
-              Responsive Web
-            </Heading>
-            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </Text>
-          </GridItem>
-          <GridItem
-            rowSpan={2}
-            colSpan={1}
-            bg="white"
-            borderRadius={15}
-            mr={20}
-          >
-            <Box
-              bgColor={"gray.100"}
-              mt={4}
-              w={"44px"}
-              h={"44px"}
-              ml={5}
-              borderRadius={10}
-              mb={5}
-            >
-              <Icon as={InfoOutlineIcon} mx={3.5} mt={4} />
-            </Box>
-            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
-              E-commerce Solutions
-            </Heading>
-            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </Text>
-            <Center>
-              <Image mb={3} mt={2} src="../Rectangle 44.png" />
-            </Center>
-          </GridItem>
-          <GridItem colSpan={2} bg="white" borderRadius="20" p={2}>
-            <Flex justify="space-between">
-              {/* Text Content Box */}
-
-              <Box pr={5}>
-                <Box
-                  bgColor={"gray.100"}
-                  w={"44px"}
-                  h={"44px"}
-                  ml={3}
-                  borderRadius={10}
-                  mb={2}
-                  mt={3}
-                >
-                  <Image src="../Group 27170.png" />
-                </Box>{" "}
-                {/* Adding padding to separate from the image */}
-                <Heading as="h2" fontSize={["10", "15", "25"]} mb={3}>
-                  Webflow
+          {/* Example of repeating GridItem */}
+          {filteredProducts.map((product) => (
+            <GridItem key={product.id} colSpan={1} bg="white" borderRadius={15}>
+              <VStack>
+                <Heading as="h2" fontSize={["10", "15", "25"]} ml={3} mt={3}>
+                  {product.title}
                 </Heading>
-                <Text maxWidth="300px" mb={4} fontSize={["10", "10", "20"]}>
-                  From concept to launch, we create stunning, user-centric
-                  websites that elevate your brand and engage your audience.
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  w={"150px"}
+                  h={"200px"}
+                />
+              </VStack>
+              <Box
+                className="description"
+                style={{
+                  display: "-webkit-box",
+                  WebkitLineClamp: 3,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                }}
+              >
+                <Text
+                  maxW={300}
+                  ml={3}
+                  mt={3}
+                  mb={4}
+                  fontSize={["10", "10", "20"]}
+                >
+                  {product.description}
                 </Text>
               </Box>
-
-              {/* Image Box */}
-              <Box flexShrink={0} bg={"blue.600"} borderRadius={25} mt={3}>
-                <Center>
-                  <SunIcon color={"white"} blockSize={"200px"} />
-                </Center>
-              </Box>
-            </Flex>
-          </GridItem>
-
-          <GridItem colSpan={1} bg="white" borderRadius={20}>
-            <Box
-              bgColor={"gray.100"}
-              mt={4}
-              w={"44px"}
-              h={"44px"}
-              ml={5}
-              borderRadius={10}
-              mb={5}
-            >
-              <Icon as={PhoneIcon} mx={3.5} mt={4} />
-            </Box>
-            <Heading as="h2" fontSize={["10", "15", "25"]} ml={3}>
-              Custom Development
-            </Heading>
-            <Text maxW={300} ml={3} mt={3} mb={4} fontSize={["10", "10", "20"]}>
-              From concept to launch, we create stunning, user-centric websites
-              that elevate your brand and engage your audience.
-            </Text>
-          </GridItem>
+            </GridItem>
+          ))}
         </Grid>
-      </Center>
-    </Flex>
+      </Flex>
+    </>
   );
 }

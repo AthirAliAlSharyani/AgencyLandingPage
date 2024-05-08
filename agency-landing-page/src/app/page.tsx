@@ -25,6 +25,7 @@ import Check_our_work from "@/components/check_our_work";
 import Reviews from "@/components/reviews_Sextion";
 import Pricing_Section from "@/components/Pricing_Section";
 import FQA from "@/components/FAQ";
+import Products from "@/components/Products";
 export default function Home() {
   return (
     <>

@@ -14,10 +14,11 @@ import {
   Flex,
   Heading,
   Icon,
+  Text,
   IconButton,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import swiper from "swiper";
 import { Navigation } from "swiper/modules";
 
@@ -25,6 +26,26 @@ import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
 export default function Check_our_work() {
+  const [data, setData] = useState([]); // Set initial state to an empty array
+
+  useEffect(() => {
+    const url = "https://fakestoreapi.com/products";
+    const options = {
+      method: "GET",
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((response) => {
+        setData(response);
+      })
+      .catch((err) => {
+        console.error(err, "error");
+        // Optionally update the state to reflect the error in the UI
+        // setData('Error fetching data'); // You can set state to an error message or similar approach
+      });
+  }, []);
+
   const swiperRef = useRef<SwiperClass | null>(null);
 
   const goNext = () => {
@@ -51,9 +72,9 @@ export default function Check_our_work() {
         <Flex align="center" justify="center">
           <Flex
             justifyContent="space-evenly"
-            alignItems="center" // Ensure vertical alignment inside this Flex
+            alignItems="center"
             mb={3}
-            w="90vw" // Width of 50% of the viewport width
+            w="90vw"
             h={"20vh"}
           >
             <IconButton
@@ -65,7 +86,7 @@ export default function Check_our_work() {
               bg={"white"}
             />
             <Heading mx="4" fontSize={60}>
-              Check Our Work
+              Check Our Products!
             </Heading>
             <IconButton
               icon={<ChevronRightIcon />}
@@ -87,64 +108,63 @@ export default function Check_our_work() {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }} // Proper assignment inside the callback
-          style={{
-            width: isMobile ? "100%" : "1960px",
-            height: isMobile ? "auto" : "700px",
-          }}
           onSlideChange={(swiper) => {
             // Reset styles for all slides
             swiper.slides.forEach((slide) => {
-              slide.style.transform = "scale(0.7)";
-              slide.style.zIndex = "0"; // Lower z-index for non-active slides
+              if (slide) {
+                // Ensure slide is not undefined
+                slide.style.transform = "scale(0.7)";
+                slide.style.zIndex = "0"; // Lower z-index for non-active slides
+              }
             });
             // Enhance the active slide
             const activeSlide = swiper.slides[swiper.activeIndex];
-            activeSlide.style.transform = "scale(1)";
-            activeSlide.style.zIndex = "1"; // Higher z-index for the active slide
+            if (activeSlide) {
+              // Ensure active slide is not undefined
+              activeSlide.style.transform = "scale(1)";
+              activeSlide.style.zIndex = "1"; // Higher z-index for the active slide
+            }
           }}
           onInit={(swiper) => {
             // Set initial styles for the active slide
             const activeSlide = swiper.slides[swiper.activeIndex];
-            activeSlide.style.transform = "scale(1.2)";
-            activeSlide.style.zIndex = "1"; // Ensure it's above others
+            if (activeSlide) {
+              // Ensure active slide is not undefined
+              activeSlide.style.transform = "scale(1.2)";
+              activeSlide.style.zIndex = "1"; // Ensure it's above others
+            }
+          }}
+          style={{
+            width: isMobile ? "100%" : "1260px",
+            height: isMobile ? "100%" : "700px",
           }}
         >
-          <SwiperSlide style={{ width: "60%" }}>
-            <img
-              src="../check3.png"
-              alt="Image 1"
-              style={{
-                width: "100%",
-                height: "100%",
-                border: "10px solid rgba(255, 255, 255, 0.5) ",
-                borderRadius: "27px",
-              }}
-            />
-          </SwiperSlide>
-          <SwiperSlide style={{ width: "60%" }}>
-            <img
-              src="../Rectangle 30.png"
-              alt="Image 2"
-              style={{
-                width: "100%",
-                height: "100%",
-                border: "10px solid rgba(255, 255, 255, 0.5) ",
-                borderRadius: "27px",
-              }}
-            />
-          </SwiperSlide>
-          <SwiperSlide style={{ width: "60%" }}>
-            <img
-              src="../Rectangle 35.png"
-              alt="Image 3"
-              style={{
-                width: "100%",
-                height: "100%",
-                border: "10px solid rgba(255, 255, 255, 0.5) ",
-                borderRadius: "27px",
-              }}
-            />
-          </SwiperSlide>
+          {data && data.length > 0 ? (
+            data.map((product) => (
+              <SwiperSlide key={product.id} style={{ width: "60%" }}>
+                <Text
+                  alignContent={"center"}
+                  fontWeight={"700px"}
+                  fontSize={"30"}
+                >
+                  {product.price}$
+                </Text>
+
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  style={{
+                    width: "960px",
+                    height: "600px",
+                    border: "10px solid rgba(255, 255, 255, 0.5)",
+                    borderRadius: "27px",
+                  }}
+                />
+              </SwiperSlide>
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
         </Swiper>
       </ChakraProvider>
     </>
