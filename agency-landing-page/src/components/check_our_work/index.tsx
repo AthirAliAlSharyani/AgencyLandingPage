@@ -135,8 +135,8 @@ export default function Check_our_work() {
             }
           }}
           style={{
-            width: isMobile ? "100%" : "1260px",
-            height: isMobile ? "100%" : "700px",
+            width: isMobile ? "auto" : "1260px",
+            height: isMobile ? "auto" : "700px",
           }}
         >
           {data && data.length > 0 ? (
