@@ -106,9 +106,11 @@ export default function NavigationBar() {
                     </Text>
                   </a>
                 </Link>
-                <Button colorScheme="blue" h={10}>
-                  Sign Up
-                </Button>
+                <Link href="/SignIn">
+                  <Button colorScheme="blue" h={10}>
+                    Sign In
+                  </Button>
+                </Link>
               </HStack>
             </Box>
           </>
