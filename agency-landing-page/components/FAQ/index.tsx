@@ -46,66 +46,68 @@ function FAQ() {
   ];
   const { isOpen, onToggle } = useDisclosure();
   return (
-    <Flex
-      direction="row"
-      align="left"
-      alignContent={"center"}
-      p={{ base: 10, md: 20, lg: 90 }}
-      w="full"
-      mt={"auto"}
-    >
-      {!isMobile ? (
-        <HStack
-          align="start"
-          spacing={10} // More manageable spacing
-          p={5}
-          alignItems="flex-start"
-          w="full"
-          maxW="1200px" // Suitable max width for responsiveness
-          mx="auto"
-        >
-          <VStack align="stretch" spacing={4} w="30%">
+    <section id="products">
+      <Flex
+        direction="row"
+        align="left"
+        alignContent={"center"}
+        p={{ base: 10, md: 20, lg: 90 }}
+        w="full"
+        mt={"auto"}
+      >
+        {!isMobile ? (
+          <HStack
+            align="start"
+            spacing={10} // More manageable spacing
+            p={5}
+            alignItems="flex-start"
+            w="full"
+            maxW="1200px" // Suitable max width for responsiveness
+            mx="auto"
+          >
+            <VStack align="stretch" spacing={4} w="30%">
+              <Heading
+                fontSize={["20", "25", "40", "67"]}
+                w={["200", "290", "300", "380px"]}
+                mt={"120"}
+              >
+                Frequently Asked Questions
+              </Heading>
+            </VStack>
+            <VStack align="stretch" spacing={4} w="70%">
+              {faqs.map((faq, index) => (
+                <FAQItem key={index} {...faq} />
+              ))}
+            </VStack>
+          </HStack>
+        ) : (
+          <VStack
+            align="center"
+            spacing={10} // More manageable spacing
+            p={5}
+            alignItems="flex-start"
+            w="full"
+            maxW="1200px" // Suitable max width for responsiveness
+            mx="auto"
+          >
             <Heading
               fontSize={["20", "25", "40", "67"]}
               w={["200", "290", "300", "380px"]}
-              mt={"120"}
+              mt={"10"}
+              ml={"10%"}
             >
               Frequently Asked Questions
             </Heading>
-          </VStack>
-          <VStack align="stretch" spacing={4} w="70%">
-            {faqs.map((faq, index) => (
-              <FAQItem key={index} {...faq} />
-            ))}
-          </VStack>
-        </HStack>
-      ) : (
-        <VStack
-          align="center"
-          spacing={10} // More manageable spacing
-          p={5}
-          alignItems="flex-start"
-          w="full"
-          maxW="1200px" // Suitable max width for responsiveness
-          mx="auto"
-        >
-          <Heading
-            fontSize={["20", "25", "40", "67"]}
-            w={["200", "290", "300", "380px"]}
-            mt={"10"}
-            ml={"10%"}
-          >
-            Frequently Asked Questions
-          </Heading>
 
-          <VStack align="stretch" spacing={4} w="100%">
-            {faqs.map((faq, index) => (
-              <FAQItem key={index} {...faq} />
-            ))}
+            <VStack align="stretch" spacing={4} w="100%">
+              {faqs.map((faq, index) => (
+                <FAQItem key={index} {...faq} />
+              ))}
+            </VStack>
           </VStack>
-        </VStack>
-      )}
-    </Flex>
+        )}
+      </Flex>
+    </section>
   );
 }
 export default FAQ;

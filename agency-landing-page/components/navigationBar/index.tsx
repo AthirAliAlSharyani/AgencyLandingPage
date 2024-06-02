@@ -75,15 +75,15 @@ export default function NavigationBar() {
                   Home
                 </Text>
               </Link>
-              <Link href="#">
-                <Text>About</Text>
+              <Link href="#contact">
+                <Text>Contact</Text>
               </Link>
-              <Link href="#">
+              <Link href="#services">
                 {" "}
-                <Text>How it Works</Text>
-              </Link>
-              <Link href="#">
                 <Text>Services</Text>
+              </Link>
+              <Link href="#products">
+                <Text>Products</Text>
               </Link>
             </HStack>
             <Box mt={10} mr={"10%"}>
@@ -128,13 +128,13 @@ export default function NavigationBar() {
                 <MenuItem as={Link} href="/">
                   Home
                 </MenuItem>
-                <MenuItem as={Link} href="/about">
-                  About
+                <MenuItem as={Link} href="#products">
+                  Products
                 </MenuItem>
-                <MenuItem as={Link} href="/services">
+                <MenuItem as={Link} href="#services">
                   Services
                 </MenuItem>
-                <MenuItem as={Link} href="/contact">
+                <MenuItem as={Link} href="#contact">
                   Contact
                 </MenuItem>
                 <MenuItem as={Link} href="/contact">

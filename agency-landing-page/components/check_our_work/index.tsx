@@ -69,126 +69,128 @@ export default function Check_our_work() {
   });
   return (
     <>
-      <ChakraProvider>
-        <Flex align="center" justify="center" flexDirection="column" w="100%">
-          <Flex
-            justifyContent="space-evenly"
-            alignItems="center"
-            mb={3}
-            w="100%"
-            h="auto"
-            p={4}
-            flexWrap="wrap"
-          >
-            <IconButton
-              icon={<ChevronLeftIcon />}
-              onClick={goPrev}
-              borderRadius="full"
-              boxSize={{ base: "50px", md: "60px", lg: "70px" }}
-              aria-label="Previous slide"
-              bg={"white"}
-            />
-            <Heading
-              mx={4}
-              fontSize={{ base: "23px", md: "36px", lg: "60px" }}
-              textAlign="center"
+      <section id="products">
+        <ChakraProvider>
+          <Flex align="center" justify="center" flexDirection="column" w="100%">
+            <Flex
+              justifyContent="space-evenly"
+              alignItems="center"
+              mb={3}
+              w="100%"
+              h="auto"
+              p={4}
+              flexWrap="wrap"
             >
-              Check Our Products!
-            </Heading>
-            <IconButton
-              icon={<ChevronRightIcon />}
-              onClick={goNext}
-              borderRadius="full"
-              boxSize={{ base: "50px", md: "60px", lg: "70px" }}
-              aria-label="Next slide"
-              bg="white"
-            />
-          </Flex>
+              <IconButton
+                icon={<ChevronLeftIcon />}
+                onClick={goPrev}
+                borderRadius="full"
+                boxSize={{ base: "50px", md: "60px", lg: "70px" }}
+                aria-label="Previous slide"
+                bg={"white"}
+              />
+              <Heading
+                mx={4}
+                fontSize={{ base: "23px", md: "36px", lg: "60px" }}
+                textAlign="center"
+              >
+                Check Our Products!
+              </Heading>
+              <IconButton
+                icon={<ChevronRightIcon />}
+                onClick={goNext}
+                borderRadius="full"
+                boxSize={{ base: "50px", md: "60px", lg: "70px" }}
+                aria-label="Next slide"
+                bg="white"
+              />
+            </Flex>
 
-          <Swiper
-            initialSlide={1}
-            slidesPerView={1}
-            spaceBetween={10}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-            }}
-            centeredSlides={true}
-            className="mySwiper"
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            onSlideChange={(swiper) => {
-              swiper.slides.forEach((slide) => {
-                if (slide) {
-                  slide.style.transform = "scale(0.7)";
-                  slide.style.zIndex = "0";
+            <Swiper
+              initialSlide={1}
+              slidesPerView={1}
+              spaceBetween={10}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+              }}
+              centeredSlides={true}
+              className="mySwiper"
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              onSlideChange={(swiper) => {
+                swiper.slides.forEach((slide) => {
+                  if (slide) {
+                    slide.style.transform = "scale(0.7)";
+                    slide.style.zIndex = "0";
+                  }
+                });
+                const activeSlide = swiper.slides[swiper.activeIndex];
+                if (activeSlide) {
+                  activeSlide.style.transform = "scale(1)";
+                  activeSlide.style.zIndex = "1";
                 }
-              });
-              const activeSlide = swiper.slides[swiper.activeIndex];
-              if (activeSlide) {
-                activeSlide.style.transform = "scale(1)";
-                activeSlide.style.zIndex = "1";
-              }
-            }}
-            onInit={(swiper) => {
-              const activeSlide = swiper.slides[swiper.activeIndex];
-              if (activeSlide) {
-                activeSlide.style.transform = "scale(1.2)";
-                activeSlide.style.zIndex = "1";
-              }
-            }}
-            style={{
-              width: "100%",
-              height: "auto",
-            }}
-          >
-            {data && data.length > 0 ? (
-              data.map((product) => (
-                <SwiperSlide
-                  key={product.id}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
-                  <Center>
-                    <Text
-                      fontWeight="700"
-                      fontSize={{ base: "20px", md: "25px", lg: "30px" }}
-                    >
-                      {product.price}$
-                    </Text>
-                  </Center>
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    maxWidth={{ base: "300px", lg: "560px" }}
-                    minWidth={{ base: "300px", lg: "560px" }}
-                    maxHeight={{ base: "400px", lg: "600px" }}
-                    minHeight={{ base: "400px", lg: "600px" }}
-                    border="10px solid rgba(255, 255, 255, 0.5)"
-                    borderRadius="27px"
-                  />
-                </SwiperSlide>
-              ))
-            ) : (
-              <p>Loading...</p>
-            )}
-          </Swiper>
-        </Flex>
-      </ChakraProvider>
+              }}
+              onInit={(swiper) => {
+                const activeSlide = swiper.slides[swiper.activeIndex];
+                if (activeSlide) {
+                  activeSlide.style.transform = "scale(1.2)";
+                  activeSlide.style.zIndex = "1";
+                }
+              }}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            >
+              {data && data.length > 0 ? (
+                data.map((product) => (
+                  <SwiperSlide
+                    key={product.id}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Center>
+                      <Text
+                        fontWeight="700"
+                        fontSize={{ base: "20px", md: "25px", lg: "30px" }}
+                      >
+                        {product.price}$
+                      </Text>
+                    </Center>
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      maxWidth={{ base: "300px", lg: "560px" }}
+                      minWidth={{ base: "300px", lg: "560px" }}
+                      maxHeight={{ base: "400px", lg: "600px" }}
+                      minHeight={{ base: "400px", lg: "600px" }}
+                      border="10px solid rgba(255, 255, 255, 0.5)"
+                      borderRadius="27px"
+                    />
+                  </SwiperSlide>
+                ))
+              ) : (
+                <p>Loading...</p>
+              )}
+            </Swiper>
+          </Flex>
+        </ChakraProvider>
+      </section>
     </>
   );
 }
