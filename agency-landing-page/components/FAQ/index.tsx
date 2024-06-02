@@ -50,7 +50,7 @@ function FAQ() {
       direction="row"
       align="left"
       alignContent={"center"}
-      p={90}
+      p={{ base: 10, md: 20, lg: 90 }}
       w="full"
       mt={"auto"}
     >
