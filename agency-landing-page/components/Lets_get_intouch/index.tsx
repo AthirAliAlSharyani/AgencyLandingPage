@@ -9,12 +9,36 @@ import {
   Input,
   Stack,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { FormControl, FormLabel, Text, Image } from "@chakra-ui/react";
 import { BellIcon, ChatIcon, EditIcon, SunIcon } from "@chakra-ui/icons";
+import emailjs from "emailjs-com";
 
 export default function Lets_Get_InTouch() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_tboam4j",
+        "template_b5wu5yc",
+        form.current,
+        "ftaSXy53p_-LtEFzA"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
   return (
     <section id="contact">
       <ChakraProvider>
@@ -43,33 +67,49 @@ export default function Lets_Get_InTouch() {
             >
               Let’s Get in Touch
             </Heading>
+            <form ref={form} onSubmit={sendEmail}>
+              <FormControl mt={4}>
+                <FormLabel>Email</FormLabel>
+                <Input
+                  type="email"
+                  name="user_email"
+                  borderColor={"black"}
+                  mb={8}
+                  h={"50px"}
+                />
+                <FormLabel>Name</FormLabel>
+                <Input
+                  type="text"
+                  name="user_name"
+                  borderColor={"black"}
+                  mb={8}
+                  h={"50px"}
+                />
+                <FormLabel>Message</FormLabel>
+                <Textarea
+                  name="message"
+                  borderColor={"black"}
+                  placeholder="Write your message here..."
+                  mb={5}
+                ></Textarea>
 
-            <FormControl mt={4}>
-              <FormLabel>Email</FormLabel>
-              <Input borderColor={"black"} type="email" mb={8} h={"50px"} />
-              <FormLabel>Name</FormLabel>
-              <Input borderColor={"black"} type="text" mb={8} h={"50px"} />
-              <FormLabel>Message</FormLabel>
-              <Textarea
-                borderColor={"black"}
-                placeholder="Write your message here..."
-                mb={5}
-              ></Textarea>
-            </FormControl>
-            <Button
-              bg="blue.600"
-              color="white"
-              _hover={{
-                bg: "white",
-                color: "black",
-                border: "1px solid black",
-              }}
-              w="full"
-              mt={5}
-              h={"60px"}
-            >
-              Get in Touch
-            </Button>
+                <Button
+                  bg="blue.600"
+                  color="white"
+                  _hover={{
+                    bg: "white",
+                    color: "black",
+                    border: "1px solid black",
+                  }}
+                  w="full"
+                  mt={5}
+                  h={"60px"}
+                  type="submit"
+                >
+                  Send Message
+                </Button>
+              </FormControl>
+            </form>
           </Box>
 
           <Flex
