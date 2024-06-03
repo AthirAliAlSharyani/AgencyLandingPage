@@ -72,6 +72,7 @@ export default function Home() {
           </Flex>
 
           <What_We_Do />
+
           <Check_our_work />
           <Reviews />
           <Pricing_Section />
