@@ -105,9 +105,10 @@ export default function What_We_Do() {
                   {category}
                 </MenuItem>
               ))}
-              <Link href="/Products" passHref>
-                <MenuItem as="a">Show All</MenuItem>
-              </Link>
+
+              <MenuItem as="a" href="./Products">
+                Show All
+              </MenuItem>
             </MenuList>
           </Menu>
         </HStack>
