@@ -11,47 +11,34 @@ import {
   Textarea,
   useToast,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FormControl, FormLabel, Text, Image } from "@chakra-ui/react";
 import { BellIcon, ChatIcon, EditIcon, SunIcon } from "@chakra-ui/icons";
 import emailjs from "emailjs-com";
+
 export default function Lets_Get_InTouch() {
-  const [formData, setFormData] = useState({
-    email: "",
-    name: "",
-    message: "",
-  });
+  const form = useRef();
 
-  const toast = useToast();
-  const sendEmail = (formData: Record<string, unknown> | undefined) => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
     emailjs
-      .send(
-        "service_tboam4j", // Your EmailJS service ID
-        "template_8r2akgf", // Your EmailJS template ID
-        formData,
-        "public_XXXXXXXXXXXX" // Your actual EmailJS public key
+      .sendForm(
+        "service_tboam4j",
+        "template_b5wu5yc",
+        form.current,
+        "ftaSXy53p_-LtEFzA"
       )
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
-      })
-      .catch((err) => {
-        console.log("FAILED...", err);
-      });
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
-
-  // Example form submission handler
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-
-    const formData = {
-      email: event.target.email.value,
-      name: event.target.name.value,
-      message: event.target.message.value,
-    };
-
-    sendEmail(formData);
-  };
-
   return (
     <section id="contact">
       <ChakraProvider>
@@ -80,13 +67,12 @@ export default function Lets_Get_InTouch() {
             >
               Let’s Get in Touch
             </Heading>
-            <form onSubmit={handleSubmit}>
+            <form ref={form} onSubmit={sendEmail}>
               <FormControl mt={4}>
                 <FormLabel>Email</FormLabel>
                 <Input
                   type="email"
-                  name="email"
-                  value={formData.email}
+                  name="user_email"
                   borderColor={"black"}
                   mb={8}
                   h={"50px"}
@@ -94,8 +80,7 @@ export default function Lets_Get_InTouch() {
                 <FormLabel>Name</FormLabel>
                 <Input
                   type="text"
-                  name="name"
-                  value={formData.name}
+                  name="user_name"
                   borderColor={"black"}
                   mb={8}
                   h={"50px"}
@@ -103,7 +88,6 @@ export default function Lets_Get_InTouch() {
                 <FormLabel>Message</FormLabel>
                 <Textarea
                   name="message"
-                  value={formData.message}
                   borderColor={"black"}
                   placeholder="Write your message here..."
                   mb={5}
