@@ -27,14 +27,15 @@ export default function NavigationBar() {
       <Flex
         as="header"
         px={{ base: 2, md: 6 }}
-        py="4"
         align="center"
         justifyContent="space-between"
         w="full"
+        bg="transparent"
+        p={4}
       >
         {!isMobile ? (
           <>
-            <HStack mt={10} ml={"10"} gap={3}>
+            <HStack ml={"10"} gap={3}>
               <Image
                 borderRadius="full"
                 boxSize="150px"
@@ -43,15 +44,16 @@ export default function NavigationBar() {
                 w={{ base: "20px", md: "40px" }}
                 h={{ base: "20px", md: "40px" }}
               />
-              <Text fontSize={20} fontFamily={"sans-serif"}>
-                Agency Landing Page
-              </Text>
+              <Link href="/">
+                <Text fontSize={20} fontFamily={"sans-serif"}>
+                  Agency Landing Page
+                </Text>
+              </Link>
             </HStack>
             <HStack
               justifyContent="center"
               background={"white"}
               width={400}
-              h={52.2}
               opacity={"60%"}
               border-2
               borderRadius={20}
@@ -60,7 +62,6 @@ export default function NavigationBar() {
               mx={2}
               fontSize={15}
               fontWeight={600}
-              mt={10}
               ml={"10"}
             >
               <Link href="#">
@@ -86,7 +87,7 @@ export default function NavigationBar() {
                 <Text>Products</Text>
               </Link>
             </HStack>
-            <Box mt={10} mr={"10%"}>
+            <Box mr={"10%"}>
               <HStack>
                 {" "}
                 <Link href="/SignUp">

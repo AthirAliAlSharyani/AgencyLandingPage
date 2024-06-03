@@ -18,7 +18,9 @@ import {
   Grid,
   Stack,
   VStack,
+  Link,
 } from "@chakra-ui/react";
+import link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export default function What_We_Do() {
@@ -103,9 +105,9 @@ export default function What_We_Do() {
                   {category}
                 </MenuItem>
               ))}
-              <MenuItem onClick={() => handleCategorySelect("")}>
-                Show All
-              </MenuItem>
+              <Link href="/Products" passHref>
+                <MenuItem as="a">Show All</MenuItem>
+              </Link>
             </MenuList>
           </Menu>
         </HStack>
