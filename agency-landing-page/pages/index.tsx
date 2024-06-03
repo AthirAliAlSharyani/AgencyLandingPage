@@ -31,8 +31,6 @@ export default function Home() {
     <>
       <ChakraProvider>
         <Box bg="blue.50" width="100vw">
-          <NavigationBar />
-
           <Flex
             width={["100%", "100%", "100%", "100%"]}
             mt={"2"}

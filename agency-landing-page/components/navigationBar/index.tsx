@@ -26,12 +26,13 @@ export default function NavigationBar() {
     <>
       <Flex
         as="header"
-        px={{ base: 2, md: 6 }}
         align="center"
         justifyContent="space-between"
         w="full"
-        bg="transparent"
-        p={4}
+        p={5}
+        mt={-2}
+        position={"fixed"}
+        bg={"white"}
       >
         {!isMobile ? (
           <>
@@ -52,7 +53,6 @@ export default function NavigationBar() {
             </HStack>
             <HStack
               justifyContent="center"
-              background={"white"}
               width={400}
               opacity={"60%"}
               border-2

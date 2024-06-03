@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+
 import {
   Box,
   Center,
@@ -27,6 +27,7 @@ import {
   Input,
   InputLeftElement,
   Icon,
+  Image,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
 export default function Products() {
@@ -67,20 +68,19 @@ export default function Products() {
   );
 
   return (
-    <Flex
-      direction="column"
-      align="left"
-      alignContent={"center"}
-      p={90}
-      w="full"
-      mt={"auto"}
-    >
+    <Flex direction="column" align="left" p={6} w="full" mt={"auto"}>
       <Center>
-        <Heading mb={20}>
+        <Heading mb={10} size={{ base: "md", md: "lg", lg: "xl" }}>
           Here where you can find all available products!
         </Heading>{" "}
       </Center>
-      <HStack>
+      <HStack
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        flexWrap={{ base: "wrap", md: "nowrap" }}
+        p={4}
+        mb={10}
+      >
         <Menu>
           <MenuButton
             as={Button}
@@ -88,9 +88,9 @@ export default function Products() {
             color={"white"}
             _hover={{ bg: "white", color: "black" }}
             mt={4}
-            w={"211px"}
-            h={"60px"}
-            mr={10}
+            w={{ base: "100%", md: "211px" }}
+            h={{ base: "40px", md: "60px" }}
+            mr={{ base: 0, md: 10 }}
           >
             {selectedCategory ? selectedCategory : "Select Category"}
             <ChevronDownIcon mr={4} ml={3} />
@@ -109,40 +109,51 @@ export default function Products() {
             </MenuItem>
           </MenuList>
         </Menu>
-        <InputGroup>
+        <InputGroup maxW={{ base: "100%", md: "500px", lg: "700px" }}>
           <InputLeftElement
             mt={4}
-            h={"60px"}
+            h={{ base: "40px", md: "60px" }}
             pointerEvents="none"
             children={<Icon as={SearchIcon} color="gray.300" />}
           />
           <Input
             variant="filled"
             placeholder="Search..."
-            w={"611px"}
-            h={"60px"}
+            w="full"
+            h={{ base: "40px", md: "60px" }}
             mt={4}
             onChange={handleSearchChange}
           />
         </InputGroup>
       </HStack>
       <Grid
-        templateRows="repeat(2, 5fr)"
-        templateColumns={["repeat(6, 5fr)"]}
+        templateColumns={{
+          base: "repeat(1, 1fr)",
+          sm: "repeat(2, 1fr)",
+          md: "repeat(3, 1fr)",
+          lg: "repeat(4, 2fr)",
+        }}
+        gap={{ base: 3, lg: 2 }}
+        p={4}
         mt="10"
         w="full"
-        gap={8}
       >
         {filteredProducts.map((product) => (
           <Card maxW="sm" key={product.id}>
             <CardBody>
               <Stack mt="2" spacing="1" content="center">
-                <Box width={100} height={200}>
-                  <img
+                <Box
+                  minWidth={100}
+                  maxWidth={100}
+                  minHeight={200}
+                  maxHeight={200}
+                  pos="relative"
+                >
+                  <Image
+                    layout="fill"
+                    objectFit="contain"
                     src={product.image}
                     alt={product.title}
-                    width={"full"}
-                    height={"full"}
                   />
                 </Box>
                 <Heading size="md"> {product.title}</Heading>
