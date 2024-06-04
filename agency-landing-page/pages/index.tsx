@@ -15,6 +15,8 @@ import {
   Center,
   Flex,
   Divider,
+  useColorModeValue,
+  DarkMode,
 } from "@chakra-ui/react";
 // 1. import `ChakraProvider` component
 import { ChakraProvider } from "@chakra-ui/react";
@@ -26,11 +28,16 @@ import Reviews from "../components/reviews_Sextion";
 import Pricing_Section from "../components/Pricing_Section";
 import FQA from "../components/FAQ";
 import Products from "../components/Products";
+import { DarkModeSwitch } from "../components/DarkSwitcher";
+import GlobalStyle from "../components/DarkModeStyle";
 export default function Home() {
+  const bgColor = useColorModeValue("gray.100", "gray.900");
+  const textColor = useColorModeValue("black", "white");
   return (
     <>
       <ChakraProvider>
-        <Box bg="blue.50" width="100vw">
+        <GlobalStyle />
+        <Box bg={bgColor} color={textColor} width="100vw">
           <Flex
             width={["100%", "100%", "100%", "100%"]}
             mt={"2"}
@@ -53,6 +60,7 @@ export default function Home() {
                 >
                   Awesome UI Dark Template for Webflow Agency
                 </Heading>
+                <DarkModeSwitch />
               </Center>
               <Center>
                 <Button
