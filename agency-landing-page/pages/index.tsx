@@ -29,12 +29,10 @@ import FQA from "../components/FAQ";
 import Products from "../components/Products";
 
 export default function Home() {
-  const bgColor = useColorModeValue("gray.100", "gray.900");
-  const textColor = useColorModeValue("black", "white");
   return (
     <>
       <ChakraProvider>
-        <Box bg={bgColor} color={textColor} width="100vw">
+        <Box width="100vw">
           <Flex
             width={["100%", "100%", "100%", "100%"]}
             mt={"2"}
