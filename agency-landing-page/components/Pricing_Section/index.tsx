@@ -127,9 +127,12 @@ export default function Pricing_Section() {
                   mt={10}
                   mb={3}
                   justifyContent={"space-between"}
+                  color={"white"}
+                  bgColor={"#4E47FF"}
+                  _hover={{ bg: "blue.700", color: "white" }}
                 >
                   <Text fontSize={"50"}> $3,250</Text>{" "}
-                  <Text fontSize={"20"} color={"grey"} ml={-230}>
+                  <Text fontSize={"20"} ml={-230}>
                     /mo
                   </Text>
                   <Image src="../arrowRight.png" />

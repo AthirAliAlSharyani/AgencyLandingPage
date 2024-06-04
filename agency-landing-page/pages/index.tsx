@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <>
       <ChakraProvider>
-        <Box width="100vw">
+        <Box width="100vw" bg={"blue.100"} color={"black"}>
           <Flex
             width={["100%", "100%", "100%", "100%"]}
             mt={"2"}

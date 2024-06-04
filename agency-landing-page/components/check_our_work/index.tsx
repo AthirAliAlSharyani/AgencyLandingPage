@@ -88,6 +88,7 @@ export default function Check_our_work() {
                 boxSize={{ base: "50px", md: "60px", lg: "70px" }}
                 aria-label="Previous slide"
                 bg={"white"}
+                color={"black"}
               />
               <Heading
                 mx={4}
@@ -103,6 +104,7 @@ export default function Check_our_work() {
                 boxSize={{ base: "50px", md: "60px", lg: "70px" }}
                 aria-label="Next slide"
                 bg="white"
+                color={"black"}
               />
             </Flex>
 
