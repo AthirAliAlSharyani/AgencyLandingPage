@@ -23,7 +23,6 @@ import {
 } from "@chakra-ui/react";
 import link from "next/link";
 import React, { useEffect, useState } from "react";
-import GlobalStyle from "../GlobalStyle_Dark";
 
 export default function What_We_Do() {
   const [data, setData] = useState([]);
@@ -99,7 +98,7 @@ export default function What_We_Do() {
                 {selectedCategory ? selectedCategory : "Select Category"}
                 <ChevronDownIcon ml={2} />
               </MenuButton>
-              <MenuList color={"black"}>
+              <MenuList>
                 {categories.map((category) => (
                   <MenuItem
                     color={"black"}
@@ -134,7 +133,7 @@ export default function What_We_Do() {
               <GridItem
                 key={product.id}
                 colSpan={1}
-                bg="white"
+                border={"2px solid white"}
                 borderRadius={15}
               >
                 <VStack>
@@ -162,15 +161,16 @@ export default function What_We_Do() {
                     overflow: "hidden",
                   }}
                 >
-                  <Text
-                    maxW={{ base: "150px", md: "300px" }}
-                    ml={3}
-                    mt={3}
-                    mb={4}
-                    fontSize={{ base: "10px", md: "15px", lg: "20px" }}
-                  >
-                    {product.description}
-                  </Text>
+                  <Center>
+                    <Text
+                      maxW={{ base: "150px", md: "300px" }}
+                      ml={3}
+                      mt={3}
+                      fontSize={{ base: "10px", md: "15px", lg: "20px" }}
+                    >
+                      {product.description}
+                    </Text>
+                  </Center>
                 </Box>
               </GridItem>
             ))}

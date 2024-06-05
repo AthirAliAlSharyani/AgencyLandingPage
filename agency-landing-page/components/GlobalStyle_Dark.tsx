@@ -9,8 +9,8 @@ const GlobalStyle = () => {
     <Global
       styles={{
         body: {
-          backgroundColor: colorMode === "dark" ? "#1A202C" : "#FFFFFF",
-          color: colorMode === "dark" ? "#FFFFFF" : "#1A202C",
+          backgroundColor: colorMode === "dark" ? "#1A202C" : "blue",
+          color: colorMode === "dark" ? "blue" : "#1A202C",
         },
       }}
     />

@@ -20,6 +20,9 @@ export default function Reviews() {
     lg: false,
     xl: false,
   });
+  const bgColor = useColorModeValue("white", "gray.800");
+  const textColor = useColorModeValue("black", "white");
+
   return (
     <ChakraProvider>
       <Center>
