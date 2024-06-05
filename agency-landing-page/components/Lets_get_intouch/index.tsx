@@ -74,6 +74,7 @@ export default function Lets_Get_InTouch() {
                   type="email"
                   name="user_email"
                   borderColor={"black"}
+                  _hover={{ borderColor: "black" }}
                   mb={8}
                   h={"50px"}
                 />
@@ -82,6 +83,7 @@ export default function Lets_Get_InTouch() {
                   type="text"
                   name="user_name"
                   borderColor={"black"}
+                  _hover={{ borderColor: "black" }}
                   mb={8}
                   h={"50px"}
                 />
@@ -91,6 +93,7 @@ export default function Lets_Get_InTouch() {
                   borderColor={"black"}
                   placeholder="Write your message here..."
                   mb={5}
+                  _hover={{ borderColor: "black" }}
                 ></Textarea>
 
                 <Button
@@ -99,7 +102,6 @@ export default function Lets_Get_InTouch() {
                   _hover={{
                     bg: "white",
                     color: "black",
-                    border: "1px solid black",
                   }}
                   w="full"
                   mt={5}
