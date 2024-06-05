@@ -22,6 +22,7 @@ import {
 } from "@chakra-ui/react";
 import link from "next/link";
 import React, { useEffect, useState } from "react";
+import GlobalStyle from "../GlobalStyle_Dark";
 
 export default function What_We_Do() {
   const [data, setData] = useState([]);
@@ -58,6 +59,7 @@ export default function What_We_Do() {
 
   return (
     <>
+      <GlobalStyle />
       <Flex
         direction="column"
         align="left"

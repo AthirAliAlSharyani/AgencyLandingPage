@@ -67,10 +67,20 @@ export default function Products() {
       (product.category === selectedCategory || selectedCategory === "") &&
       product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  const bgColor = useColorModeValue("white", "gray.800");
+  const textColor = useColorModeValue("black", "white");
 
   return (
     <ChakraProvider>
-      <Flex direction="column" align="left" p={6} w="full" mt={"auto"}>
+      <Flex
+        direction="column"
+        align="left"
+        p={6}
+        w="full"
+        mt={"auto"}
+        bg={bgColor}
+        color={textColor}
+      >
         <Center>
           <Heading mb={10} size={{ base: "md", md: "lg", lg: "xl" }}>
             Here where you can find all available products!

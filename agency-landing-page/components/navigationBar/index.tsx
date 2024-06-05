@@ -18,14 +18,20 @@ import {
   FormLabel,
   VStack,
   ChakraProvider,
+  useColorModeValue,
+  theme,
 } from "@chakra-ui/react";
 import { link } from "fs";
 import React from "react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import SignUp from "../../pages/SignUp";
 import { Router } from "next/router";
+import DarkModeSwitch from "../darkModeSwitcher";
+import GlobalStyle from "../GlobalStyle_Dark";
 export default function NavigationBar() {
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const bgColor = useColorModeValue("gray.100", "gray.900");
+  const textColor = useColorModeValue("black", "white");
 
   return (
     <>
@@ -38,7 +44,9 @@ export default function NavigationBar() {
           p={5}
           mt={-2}
           position={"fixed"}
-          bg={"white"}
+          bg={bgColor}
+          color={textColor}
+          zIndex={10}
         >
           {!isMobile ? (
             <>
@@ -95,7 +103,7 @@ export default function NavigationBar() {
               </HStack>
               <Box mr={"10%"}>
                 <HStack>
-                  {" "}
+                  <DarkModeSwitch />{" "}
                   <Link href="/SignUp">
                     <a style={{ textDecoration: "none" }}>
                       {" "}
