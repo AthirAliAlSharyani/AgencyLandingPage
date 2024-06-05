@@ -34,7 +34,10 @@ export default function Pricing_Section() {
           >
             <HStack h={"780px"} w={["900", "600", "600", "1200px"]} gap={"190"}>
               <Stack>
-                <Heading fontSize={"60"}> Pricing</Heading>
+                <Heading fontSize={"60"} color={"blue"}>
+                  {" "}
+                  Pricing
+                </Heading>
                 <Text w={"330px"} color={"grey"} fontSize={"15"} mt={5} mb={20}>
                   Take a look at some of our recent projects to see how we've
                   helped businesses like yours succeed online.
@@ -47,6 +50,7 @@ export default function Pricing_Section() {
                   justifyContent={"left"}
                 >
                   <Heading
+                    color={"blue.400"}
                     h={"130"}
                     mt={5}
                     justifyContent={"center"}
@@ -74,6 +78,7 @@ export default function Pricing_Section() {
                   justifyContent={"center"}
                   textAlign={"left"}
                   ml={-130}
+                  color={"blue"}
                 >
                   Unlimited Services
                 </Heading>
@@ -87,7 +92,7 @@ export default function Pricing_Section() {
                   Take a look at some of our recent projects to see how we've
                   helped businesses like yours succeed online.
                 </Text>
-                <Box mt={4}>
+                <Box mt={4} color={"grey"}>
                   <HStack justifyContent={"space-between"} gap={"95"} mt={3}>
                     <HStack>
                       <Image src="../tick.png" alt="tick" />
@@ -156,12 +161,7 @@ export default function Pricing_Section() {
                     helped businesses like yours succeed online.
                   </Text>
                 </VStack>
-                <VStack
-                  bg="white"
-                  h="338"
-                  borderRadius="27"
-                  justifyContent="center"
-                >
+                <VStack h="338" borderRadius="27" justifyContent="center">
                   <Heading
                     h="130"
                     mt={5}

@@ -28,6 +28,7 @@ import SignUp from "../../pages/SignUp";
 import { Router } from "next/router";
 import DarkModeSwitch from "../darkModeSwitcher";
 import GlobalStyle from "../GlobalStyle_Dark";
+import { text } from "stream/consumers";
 export default function NavigationBar() {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const bgColor = useColorModeValue("gray.100", "gray.900");
@@ -71,7 +72,7 @@ export default function NavigationBar() {
                 opacity={"60%"}
                 border-2
                 borderRadius={20}
-                color={"black"}
+                color={textColor}
                 gap={30}
                 mx={2}
                 fontSize={15}

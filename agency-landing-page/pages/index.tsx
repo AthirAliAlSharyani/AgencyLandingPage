@@ -18,8 +18,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 // 1. import `ChakraProvider` component
-import { ChakraProvider } from "@chakra-ui/react";
-import NavigationBar from "../components/navigationBar";
 import What_We_Do from "../components/what_we_do";
 import Lets_Get_InTouch from "../components/Lets_get_intouch";
 import Check_our_work from "../components/check_our_work";
