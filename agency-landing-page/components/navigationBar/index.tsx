@@ -31,8 +31,8 @@ import GlobalStyle from "../GlobalStyle_Dark";
 import { text } from "stream/consumers";
 export default function NavigationBar() {
   const isMobile = useBreakpointValue({ base: true, md: false });
-  const bgColor = useColorModeValue("gray.100", "gray.900");
-  const textColor = useColorModeValue("black", "white");
+  const bgColor = useColorModeValue("blue.400", "black.100");
+  const textColor = useColorModeValue("white", "black");
 
   return (
     <>
@@ -45,8 +45,6 @@ export default function NavigationBar() {
           p={5}
           mt={-2}
           position={"fixed"}
-          bg={bgColor}
-          color={textColor}
           zIndex={10}
         >
           {!isMobile ? (
@@ -72,7 +70,6 @@ export default function NavigationBar() {
                 opacity={"60%"}
                 border-2
                 borderRadius={20}
-                color={textColor}
                 gap={30}
                 mx={2}
                 fontSize={15}
