@@ -37,7 +37,7 @@ export default function Home() {
           direction="column"
           align="center"
           justify="center"
-          h={"60vh"}
+          h={"80vh"}
           bg={bgColor}
           color={textColor}
           // This makes the Flex container fill the viewport height
@@ -46,7 +46,6 @@ export default function Home() {
             <Center>
               <Heading
                 fontFamily={"fantasy"}
-                mb={4}
                 textAlign={"center"}
                 fontWeight={"100"}
                 maxW={"450"}

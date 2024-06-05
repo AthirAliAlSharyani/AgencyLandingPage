@@ -64,9 +64,10 @@ export default function What_We_Do() {
           direction="column"
           align="left"
           alignContent={"center"}
-          p={90}
           w="full"
+          px={10}
           mt={"auto"}
+          pb={10}
         >
           <HStack
             justifyContent={"space-between"}

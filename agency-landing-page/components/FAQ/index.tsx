@@ -122,7 +122,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
 
   return (
     <Box mb={4}>
-      <Box p={5} boxShadow="md" borderRadius="md" width="100%" bg="white">
+      <Box p={5} boxShadow="md" borderRadius="md" width="100%">
         <HStack justifyContent="space-between" width="100%">
           <Text
             fontWeight="bold"
