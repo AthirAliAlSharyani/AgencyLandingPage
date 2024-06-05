@@ -96,31 +96,22 @@ export default function What_We_Do() {
               {selectedCategory ? selectedCategory : "Select Category"}
               <ChevronDownIcon ml={2} />
             </MenuButton>
-            <MenuList bg={"blue.500"} color={"white"}>
+            <MenuList color={"black"}>
               {categories.map((category) => (
                 <MenuItem
-                  bg={"blue.500"}
-                  color={"white"}
+                  color={"black"}
                   key={category}
                   onClick={() => handleCategorySelect(category)}
-                  _hover={{
-                    bg: "white",
-                    color: "black",
-                  }}
+                  _hover={{ bgColor: "blue.200" }}
                 >
                   {category}
                 </MenuItem>
               ))}
 
               <MenuItem
-                bg={"blue.500"}
-                color={"white"}
                 as="a"
                 href="./Products"
-                _hover={{
-                  bg: "white",
-                  color: "black",
-                }}
+                _hover={{ bgColor: "blue.200" }}
               >
                 Show All
               </MenuItem>
