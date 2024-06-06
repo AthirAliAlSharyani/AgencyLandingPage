@@ -40,7 +40,7 @@ export default function Lets_Get_InTouch() {
         }
       );
   };
-  const bgColor = useColorModeValue("blue.400", "black.100");
+  const bgColor = useColorModeValue("#FFFAF0", "black.100");
   const textColor = useColorModeValue("black", "white");
 
   return (
