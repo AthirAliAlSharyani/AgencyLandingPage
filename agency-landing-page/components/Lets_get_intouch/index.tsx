@@ -9,6 +9,7 @@ import {
   Input,
   Stack,
   Textarea,
+  useColorModeValue,
   useToast,
 } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
@@ -39,6 +40,9 @@ export default function Lets_Get_InTouch() {
         }
       );
   };
+  const bgColor = useColorModeValue("blue.400", "black.100");
+  const textColor = useColorModeValue("black", "white");
+
   return (
     <section id="contact">
       <ChakraProvider>
@@ -98,7 +102,6 @@ export default function Lets_Get_InTouch() {
 
                 <Button
                   bg="blue.600"
-                  color="white"
                   _hover={{
                     bg: "white",
                     color: "black",
@@ -115,12 +118,12 @@ export default function Lets_Get_InTouch() {
           </Box>
 
           <Flex
-            bg="white"
             borderRadius="26"
             mt={10}
             pb={14}
             px={4}
             w={{ sm: "400px", md: "950px", lg: "500", xl: "900" }}
+            color={textColor}
           >
             <Stack>
               <HStack
@@ -131,7 +134,7 @@ export default function Lets_Get_InTouch() {
                 <Heading mb={4} mt={8} fontSize={["sm", "md", "xl"]} mr={"50%"}>
                   Agency page
                 </Heading>
-                <HStack color={"gray.400"} w={["100px", "280px"]}>
+                <HStack w={["100px", "280px"]}>
                   <Text> Home</Text>
                   <Text> About</Text>
                   <Text w={["70px", "80px"]}>How it Works</Text>
@@ -142,7 +145,6 @@ export default function Lets_Get_InTouch() {
                 fontSize={["10", "10", "lg"]}
                 mx={[2, 1, 8]}
                 textAlign="left"
-                color={"gray.400"}
                 m={"auto"}
                 w={{ sm: "200px", md: "500px", lg: "200" }}
               >
@@ -154,7 +156,6 @@ export default function Lets_Get_InTouch() {
                 <HStack>
                   <ChatIcon />
                   <Text
-                    color={"gray.400"}
                     fontSize={["11", "10", "15"]}
                     w={["30px", "60px", "120px"]}
                   >
