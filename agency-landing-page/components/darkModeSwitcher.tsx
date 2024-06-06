@@ -11,7 +11,6 @@ const DarkModeSwitch = () => {
         {colorMode === "light" ? <SunIcon /> : <MoonIcon />}
       </FormLabel>
       <Switch
-        id="dark-mode-switch"
         size="lg"
         isChecked={colorMode === "dark"}
         onChange={toggleColorMode}

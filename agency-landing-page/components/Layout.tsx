@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import NavigationBar from "./navigationBar";
 import { ChakraProvider } from "@chakra-ui/react";
+import DarkModeSwitch from "./darkModeSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
