@@ -16,37 +16,38 @@ import {
   Flex,
   Divider,
   useColorModeValue,
+  ChakraProvider,
 } from "@chakra-ui/react";
 // 1. import `ChakraProvider` component
-import { ChakraProvider } from "@chakra-ui/react";
-import NavigationBar from "../components/navigationBar";
 import What_We_Do from "../components/what_we_do";
 import Lets_Get_InTouch from "../components/Lets_get_intouch";
 import Check_our_work from "../components/check_our_work";
 import Reviews from "../components/reviews_Sextion";
 import Pricing_Section from "../components/Pricing_Section";
 import FQA from "../components/FAQ";
-import Products from "../components/Products";
 
 export default function Home() {
+  const bgColor = useColorModeValue("blue.100", "gray.900");
+  const textColor = useColorModeValue("black", "white");
   return (
     <>
       <ChakraProvider>
-        <Box width="100vw" bg={"blue.100"} color={"black"}>
+        <Box width="100vw" bg={bgColor} color={textColor}>
           <Flex
             width={["100%", "100%", "100%", "100%"]}
             mt={"2"}
             direction="column"
             align="center"
             justify="center"
-            h={"60vh"}
+            h={"80vh"}
+            bg={bgColor}
+            color={textColor}
             // This makes the Flex container fill the viewport height
           >
             <Box alignContent={"center"}>
               <Center>
                 <Heading
                   fontFamily={"fantasy"}
-                  mb={4}
                   textAlign={"center"}
                   fontWeight={"100"}
                   maxW={"450"}
