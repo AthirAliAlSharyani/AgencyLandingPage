@@ -25,27 +25,15 @@ export default function SignUp() {
 
   return (
     <ChakraProvider>
-      <Flex
-        minH={"100vh"}
-        align={"center"}
-        justify={"center"}
-        bg={useColorModeValue("gray.50", "gray.800")}
-      >
+      <Flex minH={"100vh"} align={"center"} justify={"center"}>
         <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
           <Stack align={"center"}>
             <Heading fontSize={"4xl"} textAlign={"center"}>
               Sign up
             </Heading>
-            <Text fontSize={"lg"} color={"gray.600"}>
-              to enjoy all of our cool services ✌️
-            </Text>
+            <Text fontSize={"lg"}>to enjoy all of our cool services ✌️</Text>
           </Stack>
-          <Box
-            rounded={"lg"}
-            bg={useColorModeValue("white", "gray.700")}
-            boxShadow={"lg"}
-            p={8}
-          >
+          <Box rounded={"lg"} boxShadow={"lg"} p={8}>
             <Stack spacing={4}>
               <HStack>
                 <Box>
