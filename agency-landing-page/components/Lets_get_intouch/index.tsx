@@ -101,7 +101,7 @@ export default function Lets_Get_InTouch() {
                 ></Textarea>
 
                 <Button
-                  bg="blue.600"
+                  bg={"blue.600"}
                   _hover={{
                     bg: "white",
                     color: "black",
@@ -123,9 +123,10 @@ export default function Lets_Get_InTouch() {
             pb={14}
             px={4}
             w={{ sm: "400px", md: "950px", lg: "500", xl: "900" }}
-            color={textColor}
+            bg={"white"}
+            color={"grey.400"}
           >
-            <Stack>
+            <Stack color={"black"}>
               <HStack
                 fontSize={["5", "10", "12px"]}
                 mb={7}
