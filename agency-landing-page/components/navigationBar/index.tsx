@@ -17,6 +17,8 @@ import {
 import React from "react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import DarkModeSwitch from "../darkModeSwitcher";
+import { getSession } from "next-auth/react";
+import { link } from "fs";
 
 export default function NavigationBar() {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -88,7 +90,7 @@ export default function NavigationBar() {
           <Box mr="10%">
             <HStack>
               <DarkModeSwitch />
-              <Link href="/SignUp">
+              <Link href="/api/auth/signout">
                 <Text
                   _hover={{
                     cursor: "pointer",
@@ -98,13 +100,11 @@ export default function NavigationBar() {
                   fontWeight="500"
                   color="gray.400"
                 >
-                  Sign Up
+                  Sign out
                 </Text>
               </Link>
-              <Link href="/SignIn">
-                <Button colorScheme="blue" h={10}>
-                  Sign In
-                </Button>
+              <Link href="/api/auth/signin" colorScheme="blue" h={10}>
+                Sign In
               </Link>
             </HStack>
           </Box>
@@ -140,4 +140,11 @@ export default function NavigationBar() {
       )}
     </Flex>
   );
+}
+export async function getServerSideProps(context: any) {
+  const session = await getSession(context);
+
+  return {
+    props: { session },
+  };
 }

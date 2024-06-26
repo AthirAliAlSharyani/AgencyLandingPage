@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import NavigationBar from "./navigationBar";
 import { ChakraProvider } from "@chakra-ui/react";
 import DarkModeSwitch from "./darkModeSwitcher";
-
+import AuthProvider from "../context/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,8 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <NavigationBar />
-      {children}
+      <AuthProvider>
+        <NavigationBar />
+        {children}
+      </AuthProvider>
     </>
   );
 }
